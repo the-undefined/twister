@@ -30,7 +30,7 @@ Usage: ruby twister.rb [options]
   -i, --interval=INT               Number of seconds between each spin
 ```
 
-An example of three people playing with each command being printed every 3 seconds.
+An example of four people playing with each command being printed every 3 seconds.
 
 ```
 $ ruby twister.rb -pJoe,Claire,Sammy,Martin
@@ -62,4 +62,5 @@ $ ruby twister.rb -i2  -pJoe,Claire,Sammy,Martin
 - [ ] convert script to a gem
 - [ ] don't command players to move to colours that are all taken
 - [ ] add pattern sequences for players to follow across moves ('Crab', 'Monkey', 'Sleeping tiger')
-- [ ] wrap in a web ui with visual commands, potentially voice triggered moves... 'next!'
+- [ ] create a visual representation of moves (maybe with `gosu` or a web app)
+- [ ] replace reliance on the `say` command, possibly with audio files
