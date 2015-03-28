@@ -56,3 +56,10 @@ $ ruby twister.rb -i10 -pJoe,Claire,Sammy,Martin
 # Faster:
 $ ruby twister.rb -i2  -pJoe,Claire,Sammy,Martin
 ```
+
+## Plans / TODO
+
+- [ ] convert script to a gem
+- [ ] don't command players to move to colours that are all taken
+- [ ] add pattern sequences for players to follow across moves ('Crab', 'Monkey', 'Sleeping tiger')
+- [ ] wrap in a web ui with visual commands, potentially voice triggered moves... 'next!'
