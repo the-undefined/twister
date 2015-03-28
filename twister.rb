@@ -52,21 +52,22 @@ move_types =
   Array( -> { "put your #{side.sample} #{body_part.sample} in the air"} ) +
   Array( -> { random_action.sample.to_s } )
 
-n = 0
 loop do
-  players.rewind if n % players.count == 0
-  n += 1
+  players.rewind
 
-  person = players.next
-  action = move_types.sample.call
-  command = "#{person}, #{action}"
+  players.count.times do
 
-  if options[:method] == :speak
-    `say #{command}`
-    puts command
-  else
-    puts command
+    person = players.next
+    action = move_types.sample.call
+    command = "#{person}, #{action}"
+
+    if options[:method] == :speak
+      `say #{command}`
+      puts command
+    else
+      puts command
+    end
+
+    sleep options[:interval]
   end
-
-  sleep options[:interval]
 end
