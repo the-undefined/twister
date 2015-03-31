@@ -39,18 +39,27 @@ random_action = [
   "pat your head five times",
   "tickle an opponent",
   "sing 'row, row, your boat'",
-  "bark like a dog three times"
+  "bark like a dog three times",
+  "pat the spot",
+  "hop on one foot",
+  "sing happy birthday",
+  "wiggle your hips",
+  "do something imaginative",
+  "make nautical noises",
+  "hot potato an opponent"
 ]
+
+move_to_color = -> { "put your #{side.sample} #{body_part.sample} on #{color.sample}" }
 
 # make it more likely to have the basic move come up,
 # and less likely for the unusual moves by stacking the
 # quantity of possible choice types.
 move_types =
-  Array.new(6,
-            -> { "put your #{side.sample} #{body_part.sample} on #{color.sample}"}
+  Array.new(2,
+            -> { move_to_color.call }
            ) +
   Array( -> { "put your #{side.sample} #{body_part.sample} in the air"} ) +
-  Array( -> { random_action.sample.to_s } )
+  Array( -> { "#{move_to_color.call} and #{random_action.sample}" } )
 
 loop do
   players.rewind
